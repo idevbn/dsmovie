@@ -23,7 +23,6 @@ function Listing() {
     axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)
     .then(response => {
       const data = response.data as MoviePage;
-      console.log(data);
       setPage(data);
     });
   }, [pageNumber]);
@@ -34,7 +33,6 @@ function Listing() {
 
   return (
     <>
-      <p style={{textAlign: "center"}}>{pageNumber}</p>
       <Pagination page={page} onChange={handlePageChange} />
       <div className="container">
         <div className="row">
